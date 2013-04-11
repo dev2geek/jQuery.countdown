@@ -26,7 +26,8 @@
 (function($) {
   
   $.fn.countdown = function(toDate, callback) {
-    var handlers = ['seconds', 'minutes', 'hours', 'days', 'weeks', 'daysLeft'];
+    //var handlers = ['seconds', 'minutes', 'hours', 'days', 'weeks', 'daysLeft'];
+    var handlers = ['seconds', 'minutes', 'hours', 'days', 'daysLeft'];
     
     function delegate(scope, method) {
       return function() { return method.call(scope) }
@@ -74,8 +75,9 @@
           minutes : Math.floor(secondsLeft / 60) % 60,
           hours   : Math.floor(secondsLeft / 60 / 60) % 24,
           days    : Math.floor(secondsLeft / 60 / 60 / 24),
-          weeks   : Math.floor(secondsLeft / 60 / 60 / 24 / 7),
-          daysLeft: Math.floor(secondsLeft / 60 / 60 / 24) % 7
+          //weeks   : Math.floor(secondsLeft / 60 / 60 / 24 / 7),
+          //daysLeft: Math.floor(secondsLeft / 60 / 60 / 24) % 7
+          daysLeft: Math.floor(secondsLeft / 60 / 60 / 24) 
         }
         for(var i=0; i<handlers.length; i++) {
           var eventName = handlers[i];
